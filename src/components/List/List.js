@@ -11,11 +11,19 @@ const List = ({ loading, error, data }) => {
       {data.map((item) => (
         <Card
           key={item.node_id}
-          title={item.name}
+          title={item.name || item.login}
           bordered={false}
           className="card"
         >
-          <p>{item.description}</p>
+          {item.description ? (
+            <p>{item.description}</p>
+          ) : (
+            <img
+              src={item.avatar_url}
+              alt={item.avatar_url}
+              className="card-image"
+            />
+          )}
         </Card>
       ))}
     </div>

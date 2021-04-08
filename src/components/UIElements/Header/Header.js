@@ -28,6 +28,11 @@ const Header = () => {
           </Link>
         </Menu.Item>
         <Menu.Item key="2">
+          <Link to="/users" className="link">
+            Users
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="3">
           <Link to="/search" className="link">
             Search
           </Link>

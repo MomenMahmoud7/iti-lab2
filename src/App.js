@@ -3,10 +3,10 @@ import Home from './pages/Home/Home';
 import PrivateRoute from './routes/PrivateRoute';
 import HiddenRoute from './routes/HiddenRoute';
 import Search from './pages/Search/Search';
-
-import './App.css';
 import Layout from './components/Layout/Layout';
 import { Switch } from 'react-router';
+import Users from './pages/Users/Users';
+import './App.css';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Switch>
         <HiddenRoute exact path="/login" component={Login} />
         <PrivateRoute exact path="/" component={Home} />
+        <PrivateRoute exact path="/users" component={Users} />
         <PrivateRoute exact path="/search" component={Search} />
       </Switch>
     </Layout>
