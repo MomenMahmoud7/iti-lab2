@@ -11,3 +11,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ant-btn {
+  margin: 0.5rem !important;
+}

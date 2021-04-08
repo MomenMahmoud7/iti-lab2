@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link {
+  margin: 0.5rem;
+}
+.header-controller {
+  padding: 0.5rem;
+}
