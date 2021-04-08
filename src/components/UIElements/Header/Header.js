@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Global } from '../../../contexts/Global';
 import { Layout, Menu } from 'antd';
 import { Button } from 'antd';
@@ -13,7 +13,7 @@ const { Header: AntdHeader } = Layout;
 
 const Header = () => {
   const { setUser } = useContext(Global);
-
+  const { pathname } = useLocation();
   const handleLogout = () => {
     localStorage.removeItem('username');
     setUser({});
@@ -21,20 +21,20 @@ const Header = () => {
 
   return (
     <AntdHeader className="header">
-      <Menu theme="dark" mode="horizontal">
-        <Menu.Item key="1">
+      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={pathname}>
+        <Menu.Item key="/">
           <Link to="/" className="link">
             Home
           </Link>
         </Menu.Item>
-        <Menu.Item key="2">
-          <Link to="/users" className="link">
-            Users
+        <Menu.Item key="/repositories">
+          <Link to="/repositories" className="link">
+            Repositories
           </Link>
         </Menu.Item>
-        <Menu.Item key="3">
-          <Link to="/search" className="link">
-            Search
+        <Menu.Item key="/users">
+          <Link to="/users" className="link">
+            Users
           </Link>
         </Menu.Item>
       </Menu>

@@ -13,9 +13,9 @@ function App() {
     <Layout>
       <Switch>
         <HiddenRoute exact path="/login" component={Login} />
-        <PrivateRoute exact path="/" component={Home} />
+        <PrivateRoute exact path="/" component={Search} />
+        <PrivateRoute exact path="/repositories" component={Home} />
         <PrivateRoute exact path="/users" component={Users} />
-        <PrivateRoute exact path="/search" component={Search} />
       </Switch>
     </Layout>
   );
